@@ -148,6 +148,8 @@ public class Gpr {
 	 * Can we read this file (either exact name or append a '.gz'
 	 */
 	public static boolean canRead(String fileName) {
+		//change1
+		System.out.println("In Function canRead inside Gpr.java: filename is :" + fileName)
 		if (fileName.equals("-")) return true; // Assume we can always read STDIN
 
 		File inputFile = new File(fileName);
@@ -785,6 +787,8 @@ public class Gpr {
 	public static void toFile(String fileName, Object obj, boolean append) {
 		BufferedWriter outFile;
 		try {
+			//change1
+			System.out.println("filename: " + fileName);
 			outFile = new BufferedWriter(new FileWriter(fileName, append));
 			outFile.write(obj.toString());
 			outFile.close();
